@@ -10,10 +10,10 @@ app.use(express.static(__dirname));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
-var testing = true;
+var testing = false;
 if (testing) {
-    http.listen(3000, function() {
-        console.log('Listening on *:3000.');
+    http.listen(80, function() {
+        console.log('Listening on *:80.');
     });
 } else {
     python("import sys;sys.path.append('jacob-neuraltalk');import sentence_maker", function(err, data) {
@@ -21,8 +21,9 @@ if (testing) {
         // get_data("../caffe/examples/images", "cat cycle", console.log);
         console.log(data);
         console.log(err);
-        http.listen(3000, function() {
-            console.log('Listening on *:3000.');
+        console.log("HIII")
+        http.listen(80, function() {
+            console.log('Listening on *:80.');
         });
     });
 }
