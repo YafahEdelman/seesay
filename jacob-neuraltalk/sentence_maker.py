@@ -30,7 +30,7 @@ def get_sentence(file_path):
     os.remove("temp_feats.mat")
 
     objects = get_objects(list(word_predictions))
-    print("objects: " + objects)
+    return("objects: " + objects)
 
     if len(objects) == 0:
         objects_sentence = "There are no visible objects."
