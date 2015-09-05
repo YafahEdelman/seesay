@@ -23,6 +23,7 @@ def get_objects(predictions, threshold = 0.2):
     # return rets
 
 def get_sentence(file_path):
+    return "HOOLA"
     word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
     return word_predictions
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
