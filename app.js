@@ -43,6 +43,7 @@ io.on('connection', function(socket) {
                 if (err) throw err;
                 console.log("GOT SENTENCE");
                 console.log(data);
+                console.log(err);
                 //data should have the sentence
 
             });
