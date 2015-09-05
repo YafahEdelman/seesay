@@ -12,7 +12,7 @@ for i in word_data_file.read().split("\n"):
         word_data.append(i[i.index(" ") + 1:])
 word_data_file.close()
 
-def get_objects(predictions, threshold = 0.2):
+def get_objects(predictions, threshold = 0.3):
     rets = []
     if max(predictions) >= threshold:
         ret = [word_data[predictions.index(max(predictions))]]
