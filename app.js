@@ -10,7 +10,7 @@ app.use(express.static(__dirname));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
-var testing = true;
+var testing = false;
 if (testing) {
     http.listen(80, function() {
         console.log('Listening on *:80.');
