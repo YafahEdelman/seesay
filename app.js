@@ -39,11 +39,12 @@ io.on('connection', function(socket) {
         fs.write(fd, buff, 0, buff.length, 0, function(err, written) {console.log(err)});
         // CLOSE SOMETHING HERE?
         if (!testing) {
-          //sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')
-            python("1+1", function(err, data) {
+            console.log("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')");
+            python("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')", function(err, data) {
                 if (err) throw err;
                 console.log("GOT SENTENCE");
                 console.log(data);
+                console.log("THAT WAS IT")
                 console.log(err);
                 //data should have the sentence
 
