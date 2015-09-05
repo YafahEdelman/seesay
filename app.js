@@ -50,6 +50,7 @@ io.on('connection', function(socket) {
         // CLOSE SOMETHING HERE?
         if (!testing) {
             console.log("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')");
+            console.log("over here")
             get_sentence("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')",
                         function(x){console.log(x); fs.unlink(fname, function(err) {});})
 
