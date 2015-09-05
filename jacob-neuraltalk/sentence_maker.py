@@ -21,7 +21,8 @@ def get_objects(predictions, threshold = 0.2):
     #     if chance >= threshold:
     #         rets.append(word)
     # return rets
-
+def here():
+    return 2
 def get_sentence(file_path):
     return "HOOLA"
     word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
