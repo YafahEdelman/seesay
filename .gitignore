@@ -2,4 +2,6 @@
 jacob-neuraltalk/test/
 jacob-neuraltalk/example_images/
 jacob-neuraltalk/data/*
-jacob-neuraltalk/cv/*
+!jacob-neuraltalk/data/README.md
+jacob-neuraltalk/cv/*.p
+node_modules/
