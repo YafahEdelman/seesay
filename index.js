@@ -1,4 +1,5 @@
-var socket = io.connect('http://localhost:3000');
+console.log(window.location.host)
+var socket = io.connect(window.location.host);
 
 var streaming = false,
     video = document.querySelector('#video'),
