@@ -1,33 +1,16 @@
-var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
 var python = require('python').shell;
-var fs = require('fs');
 
-app.use(express.static(__dirname));
+  python("import sys;sys.path.append('jacob-neuraltalk');import sentence_maker;1+1", function(err, data) {
+      if (err) throw err;
+      // get_data("../caffe/examples/images", "cat cycle", console.log);
+      console.log(data);
+      console.log(err);
+      console.log("HIII")
+      // http.listen(80, function() {
+      //     console.log('Listening on *:80.');
+      // });
+  });
 
-app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
-var testing = false;
-if (testing) {
-    http.listen(80, function() {
-        console.log('Listening on *:80.');
-    });
-} else {
-
-    python("import sys;sys.path.append('jacob-neuraltalk');import sentence_maker;1+1", function(err, data) {
-        if (err) throw err;
-        // get_data("../caffe/examples/images", "cat cycle", console.log);
-        console.log(data);
-        console.log(err);
-        console.log("HIII")
-        // http.listen(80, function() {
-        //     console.log('Listening on *:80.');
-        // });
-    });
-}
 
 // python("sentence_maker.here()",console.log)
 //
