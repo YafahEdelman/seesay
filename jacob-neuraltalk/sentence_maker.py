@@ -26,8 +26,8 @@ def here():
 def get_sentence(file_path):
     word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
-    return ret
-    os.remove("temp_feats.mat")
+
+    #os.remove("temp_feats.mat")
     objects = get_objects(word_predictions)
 
 
@@ -37,7 +37,6 @@ def get_sentence(file_path):
         objects_sentence =  "There is a %s."%objects[0]
     else:
         objects_sentence =  "There is a " + ", ".join(objects[:-1]) + ", and %s."%objects[-1]
-    print ret + ". " + objects_sentence
     return ret + ". " + objects_sentence
 #import sys;sys.path.append('jacob-neuraltalk');import sentence_maker
 #sentence_maker.get_sentence("test/unnamed.jpg")
