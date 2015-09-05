@@ -27,19 +27,21 @@ if (testing) {
         });
     });
 }
-
+var times = 0;
 io.on('connection', function(socket) {
     socket.on('picture', function(data) {
         console.log('received image');
         var data = data.replace(/^data:image\/\w+;base64,/, "");
         var buff = new Buffer(data, 'base64');
-        var fname = __dirname + '/jacob-neuraltalk/images/snapshot' + socket.id + '.png';
+        times += 1
+        var fname = __dirname + '/jacob-neuraltalk/images/snapshot' + socket.id +times + '.png';
+
         console.log(fname);
         var fd = fs.openSync(fname, 'w');
         fs.write(fd, buff, 0, buff.length, 0, function(err, written) {console.log(err)});
         // CLOSE SOMETHING HERE?
         if (!testing) {
-            python("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')", function(err, data) {
+            python("sentence_maker.get_sentence('images/snapshot" + socket.id +times + ".png')", function(err, data) {
                 if (err) throw err;
                 console.log("GOT SENTENCE");
                 console.log(data);
