@@ -46,7 +46,7 @@ function takepicture() {
     var data = canvas.toDataURL('image/png');
     console.log(data);
     socket.emit('picture', data);
-    responsiveVoice.speak("I am talking to you right now.");
+    responsiveVoice.speak("I wonder if Alok can hear this.", "US English Female");
 }
 
 startbutton.addEventListener('click', function (ev) {
