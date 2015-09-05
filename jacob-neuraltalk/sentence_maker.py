@@ -27,7 +27,8 @@ def get_sentence(file_path):
     word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
 
-    #os.remove("temp_feats.mat")
+    os.remove("temp_feats.mat")
+    return ret
     objects = get_objects(word_predictions)
 
 
