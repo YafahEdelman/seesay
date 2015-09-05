@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset=utf-8 />
-<title>SeeSay</title>
-</head>
-<body>
-  <video id="video"></video>
-<button id="startbutton">Take photo</button>
-<canvas id="canvas"></canvas>
-<script src="/socket.io/socket.io.js"></script>
-<script src='index.js'></script>
-</body>
+	<head>
+		<meta charset=utf-8 />
+		<title>SeeSay</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/flat-ui.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id = "main">
+	  		<video id="video"></video>
+			<canvas id="canvas"></canvas>
+			<button id="startbutton">Take photo</button>
+		</div>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src='index.js'></script>
+	</body>
 </html>
