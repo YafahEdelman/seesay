@@ -1,5 +1,5 @@
 *.pyc
-neuraltalk-jacob/test/
-neuraltalk-jacob/example_images/
-neuraltalk-jacob/data/
-neuraltalk-jacob/cv/
+jacob-neuraltalk/test/
+jacob-neuraltalk/example_images/
+jacob-neuraltalk/data/
+jacob-neuraltalk/cv/
