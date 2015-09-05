@@ -46,6 +46,7 @@ function takepicture() {
     var data = canvas.toDataURL('image/png');
     console.log(data);
     socket.emit('picture', data);
+    responsiveVoice.speak("I am talking to you right now.");
 }
 
 startbutton.addEventListener('click', function (ev) {
