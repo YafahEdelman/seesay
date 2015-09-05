@@ -11,6 +11,7 @@ cp Makefile.config.example Makefile.config
 make pycaffe
 make all
 make test
+echo "HI"
 make runtest
 
 # ./scripts/download_model_binary.py models/bvlc_reference_caffenet
@@ -18,3 +19,6 @@ make runtest
 
 #CUDA_HOME=/usr/local/cuda-7.0
 #LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64
+#
+# ubuntu@ip-172-31-38-140:~$ LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64
+# ubuntu@ip-172-31-38-140:~$ CUDA_HOME=/usr/local/cuda-6.5

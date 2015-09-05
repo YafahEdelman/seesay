@@ -212,6 +212,7 @@ def gen_feats(path_img , out_path, batch_size = 10 ):
 WITH_GPU = True
 if WITH_GPU:
     caffe.set_mode_gpu()
+    print "MODE SET TO GPU"
 else:
     caffe.set_mode_cpu()
 print "loading model"
