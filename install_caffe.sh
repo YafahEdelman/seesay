@@ -18,3 +18,6 @@ curl https://gist.githubusercontent.com/ksimonyan/211839e770f7b538e2d8/raw/0067c
 
 # ./scripts/download_model_binary.py models/bvlc_reference_caffenet
 # sh ./data/ilsvrc12/get_ilsvrc_aux.sh
+
+#CUDA_HOME=/usr/local/cuda-7.0
+#LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64

@@ -3,7 +3,7 @@ author: ahmed osman
 email : ahmed.osman99 AT GMAIL
 '''
 import sys
-sys.path.append('/home/jacob/caffe/python')
+sys.path.append('../../caffe/python')
 import caffe
 import numpy as np
 import argparse
@@ -215,7 +215,7 @@ if WITH_GPU:
 else:
     caffe.set_mode_cpu()
 print "loading model"
-caffe_net = caffe.Classifier("/home/jacob/caffe/models/VGG_ILSVRC_16_layers/VGG_ILSVRC_16_layers_deploy.prototxt" , "/home/jacob/caffe/models/VGG_ILSVRC_16_layers/VGG_ILSVRC_16_layers.caffemodel" , image_dims = (224,224) , raw_scale = 255, channel_swap=(2,1,0), mean = np.array([103.939, 116.779, 123.68]) )
+caffe_net = caffe.Classifier("../../caffe/models/VGG_ILSVRC_16_layers/VGG_ILSVRC_16_layers_deploy.prototxt" , "../../caffe/models/VGG_ILSVRC_16_layers/VGG_ILSVRC_16_layers.caffemodel" , image_dims = (224,224) , raw_scale = 255, channel_swap=(2,1,0), mean = np.array([103.939, 116.779, 123.68]) )
 
 
 if __name__ == '__main__':
