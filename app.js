@@ -47,9 +47,9 @@ io.on('connection', function(socket) {
                 console.log("THAT WAS IT")
                 console.log(err);
                 //data should have the sentence
-
+                fs.unlink(fname, function(err) {});
             });
-            fs.unlink(fname, function(err) {});
+
         }
     });
 
