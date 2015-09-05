@@ -13,7 +13,7 @@ for i in word_data_file.read().split("\n"):
 word_data_file.close()
 
 def get_objects(predictions, threshold = 0.3):
-    rets = []
+    ret = []
     if max(predictions) >= threshold:
         ret = [word_data[predictions.index(max(predictions))]]
     return ret
@@ -28,9 +28,7 @@ def get_sentence(file_path):
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
 
     os.remove("temp_feats.mat")
-    return("ret: " + ret)
     objects = get_objects(list(word_predictions))
-    return("objects: " + objects)
 
     if len(objects) == 0:
         objects_sentence = "There are no visible objects."
