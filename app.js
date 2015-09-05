@@ -21,6 +21,7 @@ if (testing) {
         // get_data("../caffe/examples/images", "cat cycle", console.log);
         console.log(data);
         console.log(err);
+        console.log("HIII")
         http.listen(80, function() {
             console.log('Listening on *:80.');
         });
