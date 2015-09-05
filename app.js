@@ -3,6 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var python = require('python').shell;
+var fs = require('fs');
 
 app.use(express.static(__dirname));
 
@@ -28,6 +29,9 @@ if(testing) {
 
 io.on('connection', function (socket) {
   socket.on('picture', function (data) {
-    console.log(data);
+  	var data = data.replace(/^data:image\/\w+;base64,/, "");
+    var buff = new Buffer(data,'base64');
+    var fd =  fs.openSync(__dirname + '/jacob-neuraltalk/images/snapshot.png', 'w');
+    fs.write(fd, buff, 0, buff.length, 0, function(err,written){});
   });
 });
