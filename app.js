@@ -23,9 +23,9 @@ if (testing) {
         console.log(data);
         console.log(err);
         console.log("HIII")
-        http.listen(80, function() {
-            console.log('Listening on *:80.');
-        });
+        // http.listen(80, function() {
+        //     console.log('Listening on *:80.');
+        // });
     });
 }
 
