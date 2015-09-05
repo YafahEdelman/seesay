@@ -1,5 +1,4 @@
 *.pyc
-jacob-neuraltalk/test/
 jacob-neuraltalk/example_images/
 jacob-neuraltalk/data/*
 !jacob-neuraltalk/data/README.md

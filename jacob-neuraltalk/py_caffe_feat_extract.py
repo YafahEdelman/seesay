@@ -209,7 +209,7 @@ def gen_feats(path_img , out_path, batch_size = 10 ):
     return word_predictions[0]
 
 
-WITH_GPU = False
+WITH_GPU = True
 if WITH_GPU:
     caffe.set_mode_gpu()
 else:
