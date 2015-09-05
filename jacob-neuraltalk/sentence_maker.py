@@ -36,7 +36,7 @@ def get_sentence(file_path):
         objects_sentence =  "There is a %s."%objects[0]
     else:
         objects_sentence =  "There is a " + ", ".join(objects[:-1]) + ", and %s."%objects[-1]
-
+    print ret + ". " + objects_sentence
     return ret + ". " + objects_sentence
 #import sys;sys.path.append('jacob-neuraltalk');import sentence_maker
 #sentence_maker.get_sentence("test/unnamed.jpg")
