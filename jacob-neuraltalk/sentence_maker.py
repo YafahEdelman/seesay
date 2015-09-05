@@ -28,8 +28,8 @@ def get_sentence(file_path):
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
 
     os.remove("temp_feats.mat")
-    return word_data, word_predictions
-    objects = get_objects(word_predictions)
+    return word_data, word_predictions[0]
+    objects = get_objects(word_predictions[0])
     return ret
 
     if len(objects) == 0:
