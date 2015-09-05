@@ -14,8 +14,7 @@ http.listen(3000, function(){
 });
 
 io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
+  socket.on('picture', function (data) {
     console.log(data);
   });
 });

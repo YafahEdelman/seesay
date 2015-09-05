@@ -1,3 +1,5 @@
+var socket = io.connect('http://localhost:3000');
+
 var streaming = false,
     video = document.querySelector('#video'),
     canvas = document.querySelector('#canvas'),
@@ -43,6 +45,7 @@ function takepicture() {
     canvas.getContext('2d').drawImage(video, 0, 0, width, height);
     var data = canvas.toDataURL('image/png');
     console.log(data);
+    socket.emit('picture', data);
 }
 
 startbutton.addEventListener('click', function (ev) {
