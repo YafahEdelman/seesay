@@ -1,0 +1,19 @@
+html, body {
+    background: #ECF0F1;
+}
+
+#main {
+	margin-top: 10px;
+	text-align: center;
+}
+
+#canvas {
+	visibility: hidden;
+	position:absolute;
+	left: 0%;
+}
+
+#startbutton {
+	font-size: 36px;
+	width: 250px;
+}
