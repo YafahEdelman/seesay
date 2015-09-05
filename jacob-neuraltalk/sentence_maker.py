@@ -12,7 +12,7 @@ for i in word_data_file.read().split("\n"):
         word_data.append(i[i.index(" ") + 1:])
 word_data_file.close()
 
-def get_objects(predictions, threshold = 0.1):
+def get_objects(predictions, threshold = 0.2):
     rets = []
     for chance, word in zip(predictions, word_data):
         if chance >= threshold:
@@ -35,4 +35,4 @@ def get_sentence(file_path):
 
     return ret + ". " + objects_sentence
 #import sys;sys.path.append('jacob-neuraltalk');import sentence_maker
-#sentence_maker.get_sentence("euclid.jpg")
+#sentence_maker.get_sentence("test/unnamed.jpg")
