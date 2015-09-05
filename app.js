@@ -41,6 +41,7 @@ io.on('connection', function(socket) {
         if (!testing) {
             python("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')", function(err, data) {
                 if (err) throw err;
+                console.log("GOT SENTENCE");
                 console.log(data);
                 //data should have the sentence
 
