@@ -7,7 +7,7 @@ function errorCallback(e) {
 }
 
 (function () {
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUsertMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
     var video = document.querySelector('#stream');
     var button = document.querySelector('#capture-button');
     var localMediaStream = null;
