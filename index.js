@@ -4,7 +4,7 @@ var streaming = false,
     video = document.querySelector('#video'),
     canvas = document.querySelector('#canvas'),
     startbutton = document.querySelector('#startbutton'),
-    width = 320,
+    width = 250,
     height = 0;
 
 navigator.getMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);

@@ -29,6 +29,7 @@ if(testing) {
 
 io.on('connection', function (socket) {
   socket.on('picture', function (data) {
+  	console.log('received image');
   	var data = data.replace(/^data:image\/\w+;base64,/, "");
     var buff = new Buffer(data,'base64');
     var fd =  fs.openSync(__dirname + '/jacob-neuraltalk/images/snapshot.png', 'w');
