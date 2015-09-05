@@ -44,8 +44,6 @@ function takepicture() {
     canvas.height = height;
     canvas.getContext('2d').drawImage(video, 0, 0, width, height);
     var data = canvas.toDataURL('image/png');
-    data = data.slice(22);
-    data = Base64Binary.decodeArrayBuffer(data);
     console.log(data);
     socket.emit('picture', data);
 }
