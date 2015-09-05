@@ -28,7 +28,7 @@ def get_sentence(file_path):
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
 
     os.remove("temp_feats.mat")
-
+    return("ret: " + ret)
     objects = get_objects(list(word_predictions))
     return("objects: " + objects)
 
