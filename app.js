@@ -12,8 +12,8 @@ app.get('/', function(req, res) {
 });
 var testing = true;
 if (testing) {
-    http.listen(3000, function() {
-        console.log('Listening on *:3000.');
+    http.listen(80, function() {
+        console.log('Listening on *:80.');
     });
 } else {
     python("import sys;sys.path.append('jacob-neuraltalk');import sentence_maker", function(err, data) {
@@ -21,8 +21,8 @@ if (testing) {
         // get_data("../caffe/examples/images", "cat cycle", console.log);
         console.log(data);
         console.log(err);
-        http.listen(3000, function() {
-            console.log('Listening on *:3000.');
+        http.listen(80, function() {
+            console.log('Listening on *:80.');
         });
     });
 }

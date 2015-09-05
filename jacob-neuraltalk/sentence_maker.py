@@ -14,10 +14,13 @@ word_data_file.close()
 
 def get_objects(predictions, threshold = 0.2):
     rets = []
-    for chance, word in zip(predictions, word_data):
-        if chance >= threshold:
-            rets.append(word)
-    return rets
+    if max(predictions) >= threshold:
+        ret = [word_data[predictions.index(max(predictions))]]
+    return ret
+    # for chance, word in zip(predictions, word_data):
+    #     if chance >= threshold:
+    #         rets.append(word)
+    # return rets
 
 def get_sentence(file_path):
     word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
