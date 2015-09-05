@@ -196,7 +196,7 @@ def caffe_extract_feats(path_imgs , batch_size = 10 ):
             n = min(batch_size , len(path_imgs) - b)
             feats[:,b:b+n] = predictions[:,0:n] #Removing extra predictions, due to the extra last image appending.
             n += b
-        print "%d out of %d done....."%(n ,len(path_imgs))
+    #    print "%d out of %d done....."%(n ,len(path_imgs))
 
     return feats, word_predictions
 
