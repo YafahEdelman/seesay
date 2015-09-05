@@ -39,7 +39,8 @@ io.on('connection', function(socket) {
         fs.write(fd, buff, 0, buff.length, 0, function(err, written) {console.log(err)});
         // CLOSE SOMETHING HERE?
         if (!testing) {
-            python("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')", function(err, data) {
+          //sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')
+            python("1+1", function(err, data) {
                 if (err) throw err;
                 console.log("GOT SENTENCE");
                 console.log(data);
