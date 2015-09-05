@@ -32,9 +32,9 @@ io.on('connection', function(socket) {
         console.log('received image');
         var data = data.replace(/^data:image\/\w+;base64,/, "");
         var buff = new Buffer(data, 'base64');
-        var fname = __dirname + '/jacob-neuraltalk/images/snapshot' + socket.id + '.png'
+        var fname = __dirname + '/jacob-neuraltalk/images/snapshot' + socket.id + '.png';
         console.log(fname);
-        var fd = fs.openSync(__dirname + '/jacob-neuraltalk/images/snapshot2.png', 'w');
+        var fd = fs.openSync(fname, 'w');
         fs.write(fd, buff, 0, buff.length, 0, function(err, written) {console.log(err)});
         // CLOSE SOMETHING HERE?
         if (!testing) {
@@ -45,8 +45,8 @@ io.on('connection', function(socket) {
                 //data should have the sentence
 
             });
+            fs.unlink(fname, function(err) {});
         }
-        fs.unlink(fname, function(err) {});
     });
 
 });
