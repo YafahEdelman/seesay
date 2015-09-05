@@ -1,0 +1,8 @@
+{
+  "name": "seesay",
+  "version": "0.0.1",
+  "description": "Describes the content of snapshots.",
+  "dependencies": {
+    "express": "3.4.4"
+  }
+}
