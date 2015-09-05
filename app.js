@@ -16,7 +16,7 @@ if (testing) {
         console.log('Listening on *:80.');
     });
 } else {
-    python("import sys;sys.path.append('jacob-neuraltalk');import sentence_maker", function(err, data) {
+    python("exec('import sys;sys.path.append(\'jacob-neuraltalk\');import sentence_maker')", function(err, data) {
         if (err) throw err;
         // get_data("../caffe/examples/images", "cat cycle", console.log);
         console.log(data);
