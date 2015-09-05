@@ -27,7 +27,17 @@ if (testing) {
         });
     });
 }
+python("sentence_maker.here()",console.log)
 
+
+function get_sentence(file_location, callback){
+
+    python("sentence_maker.get_sentence('"+file_location+"')", function(err, data) {
+        if (err) throw err;
+        callback(data)
+
+    });
+}
 io.on('connection', function(socket) {
     socket.on('picture', function(data) {
         console.log('received image');
@@ -40,15 +50,8 @@ io.on('connection', function(socket) {
         // CLOSE SOMETHING HERE?
         if (!testing) {
             console.log("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')");
-            python("sentence_maker.here()", function(err, data) {
-                if (err) throw err;
-                console.log("GOT SENTENCE");
-                console.log(data);
-                console.log("THAT WAS IT")
-                console.log(err);
-                //data should have the sentence
-                fs.unlink(fname, function(err) {});
-            });
+            get_sentence("sentence_maker.get_sentence('images/snapshot" + socket.id + ".png')",
+                        function(x){console.log(x); fs.unlink(fname, function(err) {});})
 
         }
     });
