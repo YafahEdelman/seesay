@@ -28,9 +28,9 @@ def get_sentence(file_path):
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
 
     os.remove("temp_feats.mat")
-    return ret
-    objects = get_objects(word_predictions)
 
+    objects = get_objects(word_predictions)
+    return ret
 
     if len(objects) == 0:
         objects_sentence = "There are no visible objects."
