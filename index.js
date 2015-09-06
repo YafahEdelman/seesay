@@ -57,6 +57,7 @@ function ready() {
     });
 
     startbutton.addEventListener('click', function (ev) {
+        responsiveVoice.speak("Analyzing scene.", "US English Female");
         takepicture();
         ev.preventDefault();
     }, false);
