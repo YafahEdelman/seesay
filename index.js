@@ -54,12 +54,12 @@ function ready() {
 
     socket.on('sentence', function(result) {
         console.log(result);
-        responsiveVoice.speak(result, "US English Female");
+        speak.play(result);
         answer.innerHTML = result;
     });
 
     startbutton.addEventListener('click', function (ev) {
-        responsiveVoice.speak("Analyzing scene.", "US English Female");
+        speak.play("Analyzing scene.");
         answer.innerHTML = "Analyzing scene ....";
         takepicture();
         ev.preventDefault();
