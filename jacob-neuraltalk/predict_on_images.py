@@ -112,7 +112,7 @@ def get_sentences(file_name, feats_path):
       img['local_file_path'] =file_name
 
       # perform the work. heavy lifting happens inside
-      kwparams = { 'beam_size' : 50 } # beam size set here
+      kwparams = { 'beam_size' : 10 } # beam size set here
       Ys = BatchGenerator.predict([{'image':img}], model, checkpoint_params, **kwparams)
       # encode the top prediction
       top_predictions = Ys[0] # take predictions for the first (and only) image we passed in
