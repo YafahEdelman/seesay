@@ -53,7 +53,7 @@ function ready() {
 
     socket.on('sentence', function(result) {
         console.log(result);
-    }
+    });
 
     startbutton.addEventListener('click', function (ev) {
         takepicture();
