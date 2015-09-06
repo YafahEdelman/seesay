@@ -6,7 +6,8 @@ function ready() {
     var streaming = false,
         video = document.querySelector('#video'),
         canvas = document.querySelector('#canvas'),
-        startbutton = document.querySelector('#startbutton'),
+        // startbutton = document.querySelector('#startbutton'),
+        startbutton = document.querySelector('#main'),
         width = 250,
         height = 0;
 
