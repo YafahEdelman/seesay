@@ -14,7 +14,7 @@ for i in word_data_file.read().split("\n"):
         word_data[-1] = word_data[-1].split(",")[0]
 word_data_file.close()
 
-def get_objects(predictions, threshold = 4):
+def get_objects(predictions, threshold = 8):
     ret = []
     if max(predictions) >= threshold:
         ret = [word_data[predictions.index(max(predictions))]]
