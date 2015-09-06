@@ -1,7 +1,6 @@
 window.onload = ready;
 
 function ready() {
-    console.log(window.location.host)
     var socket = io.connect(window.location.host);
 
     var streaming = false,
@@ -48,9 +47,12 @@ function ready() {
         canvas.height = height;
         canvas.getContext('2d').drawImage(video, 0, 0, width, height);
         var data = canvas.toDataURL('image/png');
-        console.log(data);
         socket.emit('picture', data);
         responsiveVoice.speak("I wonder if Alok can hear this.", "US English Female");
+    }
+
+    socket.on('sentence', function(result) {
+        console.log(result);
     }
 
     startbutton.addEventListener('click', function (ev) {

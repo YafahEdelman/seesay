@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 var testing = false;
 if (testing) {
     http.listen(3000, function() {
-        console.log('Listening on *:3000.');
+        console.log('Listening on *:3000.9');
     });
 } else {
     python("import sys;sys.path.append('jacob-neuraltalk');import sentence_maker", function(err, data) {
@@ -45,7 +45,7 @@ io.on('connection', function(socket) {
                 if (err) throw err;
                 console.log("GOT SENTENCE");
                 console.log(result);
-                socket.emit(result)
+                socket.emit('sentence', result)
                 console.log("THAT WAS IT");
                 console.log(err);
                 //data should have the sentence
