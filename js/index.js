@@ -1,7 +1,7 @@
 window.onload = ready;
 
 function ready() {
-    speak.play("Click anywhere to analyze scene", {speed: 125});
+    speak.play("Click anywhere to analyze scene", {speed: 135});
     var socket = io.connect(window.location.host);
 
     var streaming = false,
@@ -56,14 +56,13 @@ function ready() {
 
     socket.on('sentence', function(result) {
         console.log(result);
-        speak.play(result);
         answer.innerHTML = result;
-        speak.play(result, {speed: 125});
+        speak.play(result, {speed: 135});
         video.play();
     });
 
     startbutton.addEventListener('click', function (ev) {
-        speak.play("Analyzing scene.", {speed: 125});
+        speak.play("Analyzing scene.", {speed: 135});
         answer.innerHTML = "Analyzing scene ....";
         takepicture();
         ev.preventDefault();
