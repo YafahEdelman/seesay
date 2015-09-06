@@ -1,6 +1,7 @@
 # SeeSay
 *See the world in words*
-SeeSay is a PennApps Fall 2015 project that describes the world out loud using speech; it is meant for people with severe vision loss. It is a web app that views the world through the user's camera, and describes it in sentence form out loud. This project was inspired by the recent research breakthroughs in automatic image captioning using neural nets, seen in [the nytimes article](http://www.nytimes.com/2014/11/18/science/researchers-announce-breakthrough-in-content-recognition-software.html).
+
+SeeSay is a PennApps Fall 2015 project that describes the world out loud using speech, meant for people with severe vision loss. It is a web app that views the world through the user's camera, and describes it in sentence form out loud. This project was inspired by the recent research breakthroughs in automatic image captioning using neural nets, seen in [the nytimes article](http://www.nytimes.com/2014/11/18/science/researchers-announce-breakthrough-in-content-recognition-software.html).
 
 ## Why?
 [According to the WHO](http://www.who.int/mediacentre/factsheets/fs282/en/), there are 39 million blind people, and 246 million people with low vision. About 90% of the world's visually impaired live in low-income settings. As cheap smartphones spread throughout the developing world, SeeSay can allow anyone with an internet browser to see the world through words.
