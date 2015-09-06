@@ -49,14 +49,12 @@ function ready() {
         canvas.height = height;
         canvas.getContext('2d').drawImage(video, 0, 0, width, height);
         var data = canvas.toDataURL('image/png');
-        canvas.style.visibility = "visible";
         socket.emit('picture', data);
     }
 
     socket.on('sentence', function(result) {
         console.log(result);
         answer.innerHTML = result;
-        canvas.style.visibility = "hidden";
         responsiveVoice.speak(result, "US English Female");
     });
 
