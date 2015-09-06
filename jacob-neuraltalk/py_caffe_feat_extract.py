@@ -186,9 +186,8 @@ def caffe_extract_feats(path_imgs , batch_size = 10 ):
 
         caffe_input = np.asarray([preprocess_image(in_) for in_ in list_imgs]) #preprocess the images
         caffe_net.forward(data = caffe_input)
-        word_predictions  = list(caffe_net.blobs["fc8"].data[0])
-        print word_predictions
-        print word_predictions.shape
+        word_predictions  = caffe_net.blobs["fc8"].data
+
         predictions = caffe_net.blobs["fc7"].data.transpose()
 
         if i < len(path_imgs):
