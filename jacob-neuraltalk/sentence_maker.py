@@ -26,7 +26,8 @@ def here():
 def get_sentence(file_path):
     word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
-
+    print word_predictions
+    print max(word_predictions)
     os.remove("temp_feats.mat")
     objects = get_objects(list(word_predictions))
 

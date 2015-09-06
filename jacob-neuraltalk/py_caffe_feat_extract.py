@@ -185,8 +185,9 @@ def caffe_extract_feats(path_imgs , batch_size = 10 ):
                 list_imgs.append(list_imgs[-1]) #Appending the last image in order to have a batch of size 10. The extra predictions are removed later..
 
         caffe_input = np.asarray([preprocess_image(in_) for in_ in list_imgs]) #preprocess the images
+        caffe_net.forward(data = caffe_input)
+        word_predictions  = affe_net.blobs["fc8"].data.transpose()
 
-        word_predictions  = caffe_net.forward(data = caffe_input)[caffe_net.outputs[0]]
         predictions = caffe_net.blobs["fc7"].data.transpose()
 
         if i < len(path_imgs):
