@@ -46,6 +46,7 @@ function ready() {
     }, false);
 
     function takepicture() {
+        video.pause();
         canvas.width = width;
         canvas.height = height;
         canvas.getContext('2d').drawImage(video, 0, 0, width, height);
@@ -58,6 +59,7 @@ function ready() {
         speak.play(result);
         answer.innerHTML = result;
         speak.play(result, {speed: 125});
+        video.play();
     });
 
     startbutton.addEventListener('click', function (ev) {
