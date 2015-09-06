@@ -52,7 +52,7 @@ function ready() {
 
     socket.on('sentence', function(result) {
         console.log(result);
-        responsiveVoice.speak(result);
+        responsiveVoice.speak(result, "US English Female");
     });
 
     startbutton.addEventListener('click', function (ev) {
