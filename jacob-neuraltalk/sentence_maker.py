@@ -24,7 +24,7 @@ def get_objects(predictions, threshold = 0.3):
 def here():
     return 2
 def get_sentence(file_path):
-    feats, word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
+    word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
     ret = predict_on_images.get_sentences(file_path, "temp_feats")
 
     os.remove("temp_feats.mat")
