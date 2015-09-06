@@ -48,11 +48,11 @@ function ready() {
         canvas.getContext('2d').drawImage(video, 0, 0, width, height);
         var data = canvas.toDataURL('image/png');
         socket.emit('picture', data);
-        responsiveVoice.speak("I wonder if Alok can hear this.", "US English Female");
     }
 
     socket.on('sentence', function(result) {
         console.log(result);
+        responsiveVoice.speak(result);
     });
 
     startbutton.addEventListener('click', function (ev) {
