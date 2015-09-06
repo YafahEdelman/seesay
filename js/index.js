@@ -55,13 +55,10 @@ function ready() {
 
     socket.on('sentence', function(result) {
         console.log(result);
-<<<<<<< HEAD:index.js
         speak.play(result);
-=======
->>>>>>> 467290aa3031c15024899742b38b65618250e4b9:js/index.js
         answer.innerHTML = result;
         canvas.style.visibility = "hidden";
-        responsiveVoice.speak(result, "US English Female");
+        speak.play(result);
     });
 
     startbutton.addEventListener('click', function (ev) {
