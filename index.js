@@ -8,6 +8,7 @@ function ready() {
         canvas = document.querySelector('#canvas'),
         // startbutton = document.querySelector('#startbutton'),
         startbutton = document.querySelector('#main'),
+        answer = document.querySelector('#answer'),
         width = 250,
         height = 0;
 
@@ -54,10 +55,12 @@ function ready() {
     socket.on('sentence', function(result) {
         console.log(result);
         responsiveVoice.speak(result, "US English Female");
+        answer.innerHTML = result;
     });
 
     startbutton.addEventListener('click', function (ev) {
         responsiveVoice.speak("Analyzing scene.", "US English Female");
+        answer.innerHTML = "Analyzing scene ....";
         takepicture();
         ev.preventDefault();
     }, false);

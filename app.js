@@ -43,11 +43,8 @@ io.on('connection', function(socket) {
         if (!testing) {
             python("sentence_maker.get_sentence('images/snapshot" + socket.id +times + ".png')", function(err, result) {
                 if (err) throw err;
-                console.log("GOT SENTENCE");
                 console.log(result);
-                socket.emit('sentence', result)
-                console.log("THAT WAS IT");
-                console.log(err);
+                socket.emit('sentence', result);
                 //data should have the sentence
                 fs.unlink(fname, function(err) {});
             });
