@@ -10,7 +10,7 @@ function ready() {
         // startbutton = document.querySelector('#startbutton'),
         startbutton = document.querySelector('body'),
         answer = document.querySelector('#answer'),
-        width = 250,
+        width = 320,
         height = 0;
 
     navigator.getMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
