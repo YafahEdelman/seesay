@@ -10,10 +10,8 @@ html, body {
 #canvas {
 	visibility: hidden;
 	position:absolute;
-	left: 0%;
 }
 
-#startbutton {
-	font-size: 36px;
-	width: 250px;
+h4 {
+	margin: 0px;
 }

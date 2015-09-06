@@ -1,15 +1,16 @@
 window.onload = ready;
 
 function ready() {
+    speak.play("Click anywhere to analyze scene", {speed: 135});
     var socket = io.connect(window.location.host);
 
     var streaming = false,
         video = document.querySelector('#video'),
         canvas = document.querySelector('#canvas'),
         // startbutton = document.querySelector('#startbutton'),
-        startbutton = document.querySelector('#main'),
+        startbutton = document.querySelector('body'),
         answer = document.querySelector('#answer'),
-        width = 250,
+        width = 320,
         height = 0;
 
     navigator.getMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
@@ -45,6 +46,7 @@ function ready() {
     }, false);
 
     function takepicture() {
+        video.pause();
         canvas.width = width;
         canvas.height = height;
         canvas.getContext('2d').drawImage(video, 0, 0, width, height);
@@ -54,12 +56,13 @@ function ready() {
 
     socket.on('sentence', function(result) {
         console.log(result);
-        responsiveVoice.speak(result, "US English Female");
         answer.innerHTML = result;
+        speak.play(result, {speed: 135});
+        video.play();
     });
 
     startbutton.addEventListener('click', function (ev) {
-        responsiveVoice.speak("Analyzing scene.", "US English Female");
+        speak.play("Analyzing scene.", {speed: 135});
         answer.innerHTML = "Analyzing scene ....";
         takepicture();
         ev.preventDefault();
