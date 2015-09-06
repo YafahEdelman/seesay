@@ -56,12 +56,7 @@ function ready() {
         console.log(result);
         speak.play(result);
         answer.innerHTML = result;
-<<<<<<< HEAD
-        responsiveVoice.speak(result, "US English Female");
-=======
-        canvas.style.visibility = "hidden";
         speak.play(result);
->>>>>>> 16d57bd421b377cfbece53d9c514f397f20d8ab3
     });
 
     startbutton.addEventListener('click', function (ev) {
