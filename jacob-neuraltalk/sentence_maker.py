@@ -27,7 +27,7 @@ def here():
     return 2
 def get_sentence(file_path):
     word_predictions = py_caffe_feat_extract.gen_feats(file_path, "temp_feats")
-    ret = predict_on_images.get_sentences(file_path, "temp_feats").replace("man","person").replace("woman","person").replace("he","they").replace("she","they").replace("men","people").replace("women","people").replace("a pair of scissors", "an object")
+    ret = predict_on_images.get_sentences(file_path, "temp_feats").replace("woman","person").replace(" he "," they ").replace(" she ","they").replace("women","people").replace("a pair of scissors", "an object").replace(" men "," people ").replace(" man "," person ")
     os.remove("temp_feats.mat")
     objects = get_objects(list(word_predictions))
 
