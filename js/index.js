@@ -56,11 +56,11 @@ function ready() {
         console.log(result);
         speak.play(result);
         answer.innerHTML = result;
-        speak.play(result);
+        speak.play(result, {speed: 125});
     });
 
     startbutton.addEventListener('click', function (ev) {
-        speak.play("Analyzing scene.");
+        speak.play("Analyzing scene.", {speed: 125});
         answer.innerHTML = "Analyzing scene ....";
         takepicture();
         ev.preventDefault();
