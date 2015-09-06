@@ -1,6 +1,8 @@
 window.onload = ready;
 
 function ready() {
+    speak.play("Welcome to See Say", {speed: 125});
+    speak.play("Click anywhere to analyze scene", {speed: 125});
     var socket = io.connect(window.location.host);
 
     var streaming = false,
